@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}shopProject Products{% endblock %}
+{% block body %}
+    {% if products %}
+        <table id="products" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Product Title</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product }}</td>
+                    <td><a href="/product/1" class="btn btn-dark">Show</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+    {% else %}
+        <p>No products to display</p>
+    {% endif %}
+{% endblock %}
